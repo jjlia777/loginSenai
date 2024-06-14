@@ -5,7 +5,7 @@ import { useFonts } from 'expo-font';
 import * as Animatable from 'react-native-animatable';
 
 
-export default function Bem_Vindo() {
+export default function Login() {
 
     useFonts({ 'Oswald': require('../assets/fonts/Oswald-VariableFont_wght.ttf') });
     const navigation = useNavigation();
@@ -21,26 +21,19 @@ export default function Bem_Vindo() {
     return (
         <View style={styles.container} >
             <View style={styles.containerLogo}>
-                <Animatable.Image
-                    delay={1000}
-                    animation="flipInY"
-                    source={require("../assets/logo_Senai.png")}
-                    style={styles.logo}
-                    resizeMode="contain"
-                />
+            <Text style={styles.title}>
+                    Login realizado com sucesso!
+                </Text>
+                <Text style={styles.title}>
+                    Seja bem vindo(a)
+                </Text>
             </View>
             <Animatable.View delay={600} animation='fadeInUp' style={styles.containerForm}>
-            <Text style={styles.title}>
-                Monitore e organize seus recursos didáticos de qualquer lugar!
-            </Text>
-            <Text style={styles.text}>
-                Faça o login para começar
-            </Text>
             <TouchableOpacity
-                onPress={() => navigation.navigate('entrada')}
+                onPress={() => navigation.navigate('index')}
                 style={styles.button}>
                 <Text style={styles.buttonText}>
-                    Acessar
+                    Ok!
                 </Text>
             </TouchableOpacity>
         </Animatable.View>
@@ -50,30 +43,27 @@ export default function Bem_Vindo() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FFF'
+        backgroundColor: '#880000'
     },
     containerLogo: {
-        flex: 2,
-        backgroundColor: '#FFF',
+        flex: 3,
+        backgroundColor: '#880000',
         justifyContent: 'center',
         alignItems: 'center'
     },
-    logo: {
-        width: "70%"
-    },
     containerForm: {
         flex: 1,
-        backgroundColor: '#880000',
+        backgroundColor: '#fff',
         borderTopLeftRadius: 25,
         borderTopRightRadius: 25,
-        paddingStart: '5%',
-        paddingEnd: '5%'
+        paddingStart: '15%',
+        paddingEnd: '15%'
     },
     title: {
         fontSize: 22,
         marginTop: 20,
         marginBottom: 12,
-        color: "#FFF",
+        color: "#fff",
         fontFamily: 'Oswald',
     },
     text: {
@@ -81,19 +71,18 @@ const styles = StyleSheet.create({
     },
     button: {
         position: 'absolute',
-        backgroundColor: '#FFF',
+        backgroundColor: '#880000',
         borderRadius: 50,
         paddingVertical: 8,
-        width: '60%',
+        width: '70%',
         alignSelf: 'center',
-        bottom: '15%',
+        bottom: '50%',
         alignItems: 'center',
         justifyContent: 'center',
     },
     buttonText: {
         fontSize: 18,
-        color: '#880000',
-        fontWeight: 'bold',
-        fontFamily: 'Oswald'
+        color: '#fff',
+        fontWeight: 'bold'
     }
 })
